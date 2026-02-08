@@ -1,0 +1,28 @@
+{
+  "name": "atelier",
+  "owner": {
+    "name": "Arcadia Rose",
+    "email": "chaotic.smol@proton.me"
+  },
+  "metadata": {
+    "description": "The Atelier plugin marketplace — oracle, magus, and meido",
+    "version": "0.0.1"
+  },
+  "plugins": [
+    {
+      "name": "oracle",
+      "source": "./oracle",
+      "description": "Knower of all things; Conductor of extensive research and dialectic synthesis"
+    },
+    {
+      "name": "magus",
+      "source": "./magus",
+      "description": "Autonomous test-driven development through structured multi-agent workflows"
+    },
+    {
+      "name": "meido",
+      "source": "./meido",
+      "description": "Task and session management — create tasks and log work"
+    }
+  ]
+}
