@@ -5,7 +5,7 @@
     "email": "chaotic.smol@proton.me"
   },
   "metadata": {
-    "description": "The Atelier plugin marketplace — oracle, magus, and meido",
+    "description": "The Atelier plugin marketplace — oracle, magus, meido, and interview",
     "version": "0.0.1"
   },
   "plugins": [
@@ -23,6 +23,11 @@
       "name": "meido",
       "source": "./meido",
       "description": "Task and session management — create tasks and log work"
+    },
+    {
+      "name": "interview",
+      "source": "./interview",
+      "description": "Structured user interviews with variable assignments and answer validation"
     }
   ]
 }

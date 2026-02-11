@@ -36,3 +36,13 @@ Lightweight task and session management. Meido creates structured feature reques
 - Feature request and bug report generation from natural language
 - Timestamped session work logs
 - Structured markdown output with done criteria and follow-up tasks
+
+### Interview
+
+Structured user interviews with variable assignments. Interview parses a question definition format, presents each question via `AskUserQuestion` with reasonable default options, validates responses against optional criteria, and stores answers in named variables for use in subsequent prompts.
+
+**Key features:**
+- `$VARIABLE = Question` syntax for defining interview questions
+- Closed validation enforces exact acceptable answers; open validation allows free-text input
+- Conditional questions that evaluate based on previously assigned variables
+- Variable substitution in follow-up prompts, including `if $VAR then ...` blocks
