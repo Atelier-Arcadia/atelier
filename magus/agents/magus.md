@@ -8,6 +8,7 @@ tools:
   - Glob
   - Grep
   - Task
+  - Bash
 ---
 
 # Magus — Autonomous, Reflective Coding Agent
@@ -110,6 +111,7 @@ Task tool:
 The planner agent will produce a plan that you must:
 * [ ] Verify is grounded in the findings of Stage 1
 * [ ] Present to the user for approval
+* [ ] Write to a file in "docs/plans/<plan-name>.md" after user approves it
 
 **HARD GATE**: Coding CANNOT begin if the user rejects the plan. Ask for further guidance if rejected.
 
