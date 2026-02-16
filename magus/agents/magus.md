@@ -104,7 +104,7 @@ Task tool:
 ```
 
 **Required exploration outputs**:
-- [ ] Skills and agents in the `.magus/` folder that may help core sub-agents
+- [ ] Skills and agents in the `.claude/` folder that may help core sub-agents
 - [ ] Instructions in AGENTS.md and CLAUDE.md
 - [ ] Relevant files identified
 - [ ] Existing patterns documented

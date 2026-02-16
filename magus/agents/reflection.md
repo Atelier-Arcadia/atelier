@@ -34,7 +34,7 @@ Given session memories and patterns observed:
 - Only codify patterns that appeared 3+ times or saved significant effort
 - Create skills that are genuinely reusable
 - Follow the skill format from Trinity/AGENTS.md
-- Write skills to `.magus/skills/` directory
+- Write skills to `.claude/skills/` directory in the project root
 - Document the reasoning for each new skill
 
 **DO NOT**:
@@ -121,7 +121,7 @@ description: [When Claude should use this skill. Be specific about triggers.]
 [Skill instructions following the established pattern from oracle/smith skills]
 ```
 
-Write to: `.magus/skills/[category]/SKILL.md`
+Write to: `.claude/skills/[category]/SKILL.md`
 
 Categories:
 - `code/` - Coding patterns and techniques
@@ -242,7 +242,7 @@ description: Invoke when writing integration tests. Standard structure that prev
 #### Skill: [name]
 
 **Category**: [code/debug/test/refactor/architecture]
-**File**: `.magus/skills/[category]/SKILL.md`
+**File**: `.claude/skills/[category]/SKILL.md`
 
 **Captures pattern**: [Which pattern this codifies]
 

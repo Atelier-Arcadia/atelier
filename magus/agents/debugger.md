@@ -56,7 +56,7 @@ Given failing tests and implementation, diagnose and fix:
 
 1. **Scan for debug skills**:
    ```bash
-   Glob: .magus/skills/debug/*.md
+   Glob: .claude/skills/debug/*.md
    ```
 
 2. **If skills found**:
