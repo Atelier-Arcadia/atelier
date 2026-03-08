@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Style 2: Moonlit Pixel Garden</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #1a1028;
+      color: #e0d0f0;
+      font-family: 'Silkscreen', monospace;
+      font-size: 14px;
+      line-height: 1.8;
+      min-height: 100vh;
+      image-rendering: pixelated;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(1px 1px at 10% 20%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 30% 60%, #ddc 50%, transparent 100%),
+        radial-gradient(1px 1px at 50% 10%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 70% 80%, #eef 50%, transparent 100%),
+        radial-gradient(1px 1px at 90% 40%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 15% 85%, #ddf 50%, transparent 100%),
+        radial-gradient(1px 1px at 45% 45%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 80% 15%, #ffe 50%, transparent 100%),
+        radial-gradient(2px 2px at 25% 35%, #fcf 50%, transparent 100%),
+        radial-gradient(1px 1px at 60% 70%, #fff 50%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .moon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #fef8e0, #e8d890);
+      box-shadow: 0 0 40px rgba(254, 248, 220, 0.3), 0 0 80px rgba(254, 248, 220, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #f0e0ff;
+      text-shadow: 0 0 20px rgba(200, 150, 255, 0.3);
+      letter-spacing: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: #8a7a9a;
+      font-size: 10px;
+      letter-spacing: 4px;
+      margin-bottom: 3rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .card {
+      border: 2px solid #3a2a4a;
+      background: rgba(30, 20, 50, 0.8);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: #c0b0d8;
+    }
+
+    .card:hover {
+      border-color: #8a6ab0;
+      background: rgba(60, 40, 90, 0.6);
+      box-shadow: 0 0 16px rgba(138, 106, 176, 0.2);
+      transform: translate(-2px, -2px);
+    }
+
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-label {
+      font-size: 10px;
+    }
+
+    footer {
+      margin-top: 3rem;
+      color: #4a3a5a;
+      font-size: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="page">
+    <div class="moon"></div>
+    <h1>ATELIER</h1>
+    <p class="subtitle">a workshop under the moon</p>
+    <div class="card-grid">
+      <a href="#" class="card">
+        <div class="card-icon">&#9733;</div>
+        <div class="card-label">Spellbook</div>
+      </a>
+      <a href="#" class="card">
+        <div class="card-icon">&#9878;</div>
+        <div class="card-label">Cauldron</div>
+      </a>
+      <a href="#" class="card">
+        <div class="card-icon">&#9790;</div>
+        <div class="card-label">Moon Phase</div>
+      </a>
+      <a href="#" class="card">
+        <div class="card-icon">&#10047;</div>
+        <div class="card-label">Herb Garden</div>
+      </a>
+    </div>
+    <footer>~ blessed be ~</footer>
+  </div>
+</body>
+</html>

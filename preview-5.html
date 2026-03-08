@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Catppuccin Mocha</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen&display=swap');
+
+    /* === Catppuccin Mocha Palette === */
+    :root {
+      --ctp-rosewater: #f5e0dc;
+      --ctp-flamingo:  #f2cdcd;
+      --ctp-pink:      #f5c2e7;
+      --ctp-mauve:     #cba6f7;
+      --ctp-red:       #f38ba8;
+      --ctp-maroon:    #eba0ac;
+      --ctp-peach:     #fab387;
+      --ctp-yellow:    #f9e2af;
+      --ctp-green:     #a6e3a1;
+      --ctp-teal:      #94e2d5;
+      --ctp-sky:       #89dceb;
+      --ctp-sapphire:  #74c7ec;
+      --ctp-blue:      #89b4fa;
+      --ctp-lavender:  #b4befe;
+      --ctp-text:      #cdd6f4;
+      --ctp-subtext1:  #bac2de;
+      --ctp-subtext0:  #a6adc8;
+      --ctp-overlay2:  #9399b2;
+      --ctp-overlay1:  #7f849c;
+      --ctp-overlay0:  #6c7086;
+      --ctp-surface2:  #585b70;
+      --ctp-surface1:  #45475a;
+      --ctp-surface0:  #313244;
+      --ctp-base:      #1e1e2e;
+      --ctp-mantle:    #181825;
+      --ctp-crust:     #11111b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--ctp-base);
+      color: var(--ctp-text);
+      font-family: 'Silkscreen', monospace;
+      font-size: 14px;
+      line-height: 1.8;
+      min-height: 100vh;
+      image-rendering: pixelated;
+      overflow-x: hidden;
+    }
+
+
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    /* === Cat Familiar === */
+
+    .cat {
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 2rem;
+      color: var(--ctp-lavender);
+      white-space: pre;
+      font-family: 'Press Start 2P', monospace;
+      line-height: 1.4;
+      text-shadow: 0 0 6px rgba(180, 190, 254, 0.4);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 22px;
+      color: var(--ctp-mauve);
+      text-shadow:
+        4px 4px 0 var(--ctp-crust),
+        0 0 20px rgba(203, 166, 247, 0.3),
+        0 0 40px rgba(203, 166, 247, 0.1);
+      margin-bottom: 0.5rem;
+      font-family: 'Press Start 2P', monospace;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 10px;
+      color: var(--ctp-overlay1);
+      margin-bottom: 3rem;
+      font-family: 'Press Start 2P', monospace;
+      text-shadow: 0 0 8px rgba(127, 132, 156, 0.3);
+    }
+
+    /* === Dividers === */
+
+    .divider {
+      text-align: center;
+      color: var(--ctp-surface2);
+      font-size: 10px;
+      font-family: 'Press Start 2P', monospace;
+      letter-spacing: 4px;
+      margin: 2rem 0;
+      text-shadow: 0 0 6px rgba(88, 91, 112, 0.3);
+    }
+
+    /* === Speech Bubble === */
+
+    .speech-bubble {
+      background: var(--ctp-mantle);
+      border: 3px solid var(--ctp-surface1);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      color: var(--ctp-subtext1);
+      font-size: 12px;
+      box-shadow: 0 0 12px rgba(203, 166, 247, 0.06);
+    }
+
+    .speech-bubble::after {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      left: 40px;
+      width: 0; height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 12px solid var(--ctp-surface1);
+    }
+
+    .familiar-says {
+      font-size: 10px;
+      color: var(--ctp-overlay0);
+      font-family: 'Press Start 2P', monospace;
+      margin-top: 1rem;
+    }
+
+    /* === Navigation Links === */
+
+    .links {
+      list-style: none;
+      margin-top: 2rem;
+    }
+
+    .links li { margin: 8px 0; }
+
+    .links a {
+      text-decoration: none;
+      font-size: 12px;
+      display: inline-block;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.1s;
+    }
+
+    .links a::before {
+      content: "~ ";
+      transition: all 0.1s;
+    }
+
+    /* Each link uses a different accent color */
+    .links li:nth-child(1) a { color: var(--ctp-pink); }
+    .links li:nth-child(1) a::before { color: var(--ctp-surface2); }
+    .links li:nth-child(1) a:hover {
+      color: var(--ctp-rosewater);
+      border-bottom-color: var(--ctp-pink);
+      text-shadow: 0 0 8px rgba(245, 194, 231, 0.4);
+    }
+
+    .links li:nth-child(2) a { color: var(--ctp-mauve); }
+    .links li:nth-child(2) a::before { color: var(--ctp-surface2); }
+    .links li:nth-child(2) a:hover {
+      color: var(--ctp-lavender);
+      border-bottom-color: var(--ctp-mauve);
+      text-shadow: 0 0 8px rgba(203, 166, 247, 0.4);
+    }
+
+    .links li:nth-child(3) a { color: var(--ctp-teal); }
+    .links li:nth-child(3) a::before { color: var(--ctp-surface2); }
+    .links li:nth-child(3) a:hover {
+      color: var(--ctp-sky);
+      border-bottom-color: var(--ctp-teal);
+      text-shadow: 0 0 8px rgba(148, 226, 213, 0.4);
+    }
+
+    .links li:nth-child(4) a { color: var(--ctp-peach); }
+    .links li:nth-child(4) a::before { color: var(--ctp-surface2); }
+    .links li:nth-child(4) a:hover {
+      color: var(--ctp-yellow);
+      border-bottom-color: var(--ctp-peach);
+      text-shadow: 0 0 8px rgba(250, 179, 135, 0.4);
+    }
+
+    .links li:nth-child(5) a { color: var(--ctp-green); }
+    .links li:nth-child(5) a::before { color: var(--ctp-surface2); }
+    .links li:nth-child(5) a:hover {
+      color: var(--ctp-green);
+      border-bottom-color: var(--ctp-green);
+      text-shadow: 0 0 8px rgba(166, 227, 161, 0.4);
+    }
+
+    .links li:nth-child(6) a { color: var(--ctp-sapphire); }
+    .links li:nth-child(6) a::before { color: var(--ctp-surface2); }
+    .links li:nth-child(6) a:hover {
+      color: var(--ctp-blue);
+      border-bottom-color: var(--ctp-sapphire);
+      text-shadow: 0 0 8px rgba(116, 199, 236, 0.4);
+    }
+
+    /* === Color Swatch Row === */
+
+    .pixel-art-row {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin: 3rem 0 1rem;
+    }
+
+    .pixel {
+      width: 8px;
+      height: 8px;
+    }
+
+    .p-rosewater { background: var(--ctp-rosewater); }
+    .p-flamingo  { background: var(--ctp-flamingo); }
+    .p-pink      { background: var(--ctp-pink); }
+    .p-mauve     { background: var(--ctp-mauve); box-shadow: 0 0 6px rgba(203, 166, 247, 0.5); }
+    .p-red       { background: var(--ctp-red); }
+    .p-maroon    { background: var(--ctp-maroon); }
+    .p-peach     { background: var(--ctp-peach); }
+    .p-yellow    { background: var(--ctp-yellow); box-shadow: 0 0 6px rgba(249, 226, 175, 0.4); }
+    .p-green     { background: var(--ctp-green); }
+    .p-teal      { background: var(--ctp-teal); }
+    .p-sky       { background: var(--ctp-sky); }
+    .p-sapphire  { background: var(--ctp-sapphire); }
+    .p-blue      { background: var(--ctp-blue); }
+    .p-lavender  { background: var(--ctp-lavender); box-shadow: 0 0 6px rgba(180, 190, 254, 0.4); }
+
+    /* === Potion Shelf === */
+
+    .shelf-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      color: var(--ctp-overlay0);
+      margin-top: 3rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 6px rgba(108, 112, 134, 0.3);
+    }
+
+    .potion-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--ctp-surface0);
+      border: 3px solid var(--ctp-surface1);
+      padding: 2px;
+    }
+
+    .potion {
+      background: var(--ctp-mantle);
+      padding: 1rem 0.5rem;
+      text-align: center;
+      transition: all 0.15s;
+    }
+
+    .potion:hover {
+      background: var(--ctp-base);
+    }
+
+    .potion-icon {
+      font-size: 18px;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .potion-name {
+      font-size: 8px;
+      font-family: 'Press Start 2P', monospace;
+    }
+
+    .potion:nth-child(1) .potion-icon { color: var(--ctp-red); }
+    .potion:nth-child(1) .potion-name { color: var(--ctp-maroon); }
+    .potion:nth-child(1):hover .potion-icon { text-shadow: 0 0 8px rgba(243, 139, 168, 0.5); }
+
+    .potion:nth-child(2) .potion-icon { color: var(--ctp-green); }
+    .potion:nth-child(2) .potion-name { color: var(--ctp-teal); }
+    .potion:nth-child(2):hover .potion-icon { text-shadow: 0 0 8px rgba(166, 227, 161, 0.5); }
+
+    .potion:nth-child(3) .potion-icon { color: var(--ctp-blue); }
+    .potion:nth-child(3) .potion-name { color: var(--ctp-sapphire); }
+    .potion:nth-child(3):hover .potion-icon { text-shadow: 0 0 8px rgba(137, 180, 250, 0.5); }
+
+    .potion:nth-child(4) .potion-icon { color: var(--ctp-yellow); }
+    .potion:nth-child(4) .potion-name { color: var(--ctp-peach); }
+    .potion:nth-child(4):hover .potion-icon { text-shadow: 0 0 8px rgba(249, 226, 175, 0.5); }
+
+    /* === Status Bar === */
+
+    .status-bar {
+      margin-top: 3rem;
+      border: 2px solid var(--ctp-surface0);
+      background: var(--ctp-mantle);
+      padding: 6px 12px;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+    }
+
+    .status-bar .hp { color: var(--ctp-green); }
+    .status-bar .mp { color: var(--ctp-blue); }
+    .status-bar .moon { color: var(--ctp-yellow); }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="cat">
+ /\_/\
+( o.o )
+ > ^ <
+    </div>
+    <h1>ATELIER</h1>
+    <p class="subtitle">nyaa~</p>
+
+    <div class="divider">--- * --- * ---</div>
+
+    <div class="speech-bubble">
+      Welcome to the workshop! I'm the familiar here.
+      Poke around, there are spells and projects
+      tucked into every corner.
+    </div>
+
+    <p class="familiar-says">* purrs softly *</p>
+
+    <ul class="links">
+      <li><a href="#">Projects & Spells</a></li>
+      <li><a href="#">The Grimoire (Blog)</a></li>
+      <li><a href="#">Enchanted Tools</a></li>
+      <li><a href="#">Summoning Circle</a></li>
+      <li><a href="#">Herb Garden</a></li>
+      <li><a href="#">Scrying Pool</a></li>
+    </ul>
+
+    <div class="pixel-art-row">
+      <div class="pixel p-rosewater"></div>
+      <div class="pixel p-flamingo"></div>
+      <div class="pixel p-pink"></div>
+      <div class="pixel p-mauve"></div>
+      <div class="pixel p-red"></div>
+      <div class="pixel p-maroon"></div>
+      <div class="pixel p-peach"></div>
+      <div class="pixel p-yellow"></div>
+      <div class="pixel p-green"></div>
+      <div class="pixel p-teal"></div>
+      <div class="pixel p-sky"></div>
+      <div class="pixel p-sapphire"></div>
+      <div class="pixel p-blue"></div>
+      <div class="pixel p-lavender"></div>
+    </div>
+
+    <div class="divider">--- * --- * ---</div>
+
+    <p class="shelf-label">~ potion shelf ~</p>
+    <div class="potion-grid">
+      <div class="potion">
+        <span class="potion-icon">&#9883;</span>
+        <span class="potion-name">Fire</span>
+      </div>
+      <div class="potion">
+        <span class="potion-icon">&#9752;</span>
+        <span class="potion-name">Nature</span>
+      </div>
+      <div class="potion">
+        <span class="potion-icon">&#10052;</span>
+        <span class="potion-name">Frost</span>
+      </div>
+      <div class="potion">
+        <span class="potion-icon">&#9788;</span>
+        <span class="potion-name">Light</span>
+      </div>
+    </div>
+
+    <div class="divider">--- * --- * ---</div>
+
+    <div class="status-bar">
+      <span class="hp">HP 999/999</span>
+      <span class="mp">MP 777/777</span>
+      <span class="moon">Waxing Crescent</span>
+    </div>
+  </div>
+</body>
+</html>

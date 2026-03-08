@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Style 3: Enchanted Window</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #2a1a2e;
+      background-image:
+        linear-gradient(45deg, #1a1020 25%, transparent 25%),
+        linear-gradient(-45deg, #1a1020 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #1a1020 75%),
+        linear-gradient(-45deg, transparent 75%, #1a1020 75%);
+      background-size: 8px 8px;
+      color: #e8d8c8;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 10px;
+      line-height: 2;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      image-rendering: pixelated;
+    }
+
+    .window {
+      max-width: 560px;
+      width: 100%;
+    }
+
+    .title-bar {
+      background: linear-gradient(90deg, #6a3a8a, #8a4aaa);
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 3px solid #9a5aba;
+      border-bottom: none;
+    }
+
+    .title-bar span {
+      font-size: 8px;
+      color: #f0e0ff;
+    }
+
+    .title-buttons {
+      display: flex;
+      gap: 6px;
+    }
+
+    .title-buttons div {
+      width: 12px;
+      height: 12px;
+      border: 2px solid #f0e0ff;
+    }
+
+    .window-body {
+      border: 3px solid #9a5aba;
+      background: #12081a;
+      padding: 2rem;
+    }
+
+    .pixel-border {
+      border: 4px solid #4a2a6a;
+      padding: 2rem;
+      background: #18101e;
+      position: relative;
+    }
+
+    .pixel-border::before {
+      content: "";
+      position: absolute;
+      top: -4px; left: -4px; right: -4px; bottom: -4px;
+      border: 2px solid #2a1a3a;
+      pointer-events: none;
+    }
+
+    .hat {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 18px;
+      color: #d8a0f0;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      text-align: center;
+      color: #8a6a9a;
+      font-size: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .menu-item {
+      display: block;
+      text-decoration: none;
+      color: #c8a8d8;
+      padding: 8px 12px;
+      margin: 4px 0;
+      border: 2px solid transparent;
+      transition: all 0.1s;
+    }
+
+    .menu-item:hover {
+      border-color: #9a5aba;
+      background: #2a1a3e;
+      color: #f0d0ff;
+    }
+
+    .menu-item::before {
+      content: "[ ] ";
+      color: #6a3a8a;
+    }
+
+    .menu-item:hover::before {
+      content: "[x] ";
+      color: #d8a0f0;
+    }
+
+    .status-bar {
+      background: #2a1a3a;
+      border: 3px solid #9a5aba;
+      border-top: none;
+      padding: 4px 12px;
+      font-size: 8px;
+      color: #6a5a7a;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="window">
+    <div class="title-bar">
+      <span>atelier.exe</span>
+      <div class="title-buttons">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="pixel-border">
+        <div class="hat">&#x1F9F9;</div>
+        <h1>ATELIER</h1>
+        <p class="tagline">where code meets conjuring</p>
+        <nav>
+          <a href="#" class="menu-item">Enchantments</a>
+          <a href="#" class="menu-item">Potions Lab</a>
+          <a href="#" class="menu-item">Crystal Archive</a>
+          <a href="#" class="menu-item">Twilight Log</a>
+          <a href="#" class="menu-item">About the Witch</a>
+        </nav>
+      </div>
+    </div>
+    <div class="status-bar">
+      <span>MP: 999/999</span>
+      <span>Moon: Waxing Crescent</span>
+    </div>
+  </div>
+</body>
+</html>

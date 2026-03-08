@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Style 4: Dark Apothecary</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0e0e0e;
+      color: #c8b89a;
+      font-family: 'Silkscreen', monospace;
+      font-size: 14px;
+      line-height: 1.8;
+      min-height: 100vh;
+      image-rendering: pixelated;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .header {
+      text-align: center;
+      padding: 3rem 0;
+      border-bottom: 3px double #3a3020;
+      margin-bottom: 2rem;
+    }
+
+    .pentacle {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      border: 3px solid #6a5030;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 40px;
+      color: #d4a040;
+      text-shadow: 0 0 12px rgba(212, 160, 64, 0.4);
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #d4a040;
+      letter-spacing: 6px;
+      text-shadow: 2px 2px 0 #1a1a0a;
+    }
+
+    .divider {
+      text-align: center;
+      color: #3a3020;
+      margin: 2rem 0;
+      font-size: 10px;
+      letter-spacing: 4px;
+    }
+
+    .intro {
+      text-align: center;
+      color: #8a7a60;
+      font-size: 12px;
+      max-width: 400px;
+      margin: 0 auto 2rem;
+    }
+
+    .shelf {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: #2a2418;
+      border: 3px solid #3a3020;
+      padding: 2px;
+    }
+
+    .bottle {
+      background: #1a1610;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      text-decoration: none;
+      color: #c8b89a;
+      transition: all 0.15s;
+      position: relative;
+    }
+
+    .bottle:hover {
+      background: #2a2418;
+    }
+
+    .bottle:hover .bottle-icon {
+      color: #d4a040;
+      text-shadow: 0 0 8px rgba(212, 160, 64, 0.5);
+    }
+
+    .bottle-icon {
+      font-size: 24px;
+      margin-bottom: 0.5rem;
+      display: block;
+      color: #6a5a40;
+      transition: all 0.15s;
+    }
+
+    .bottle-name {
+      font-size: 9px;
+      color: #8a7a60;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 10px;
+      color: #3a3020;
+      border-top: 3px double #3a3020;
+      padding-top: 2rem;
+    }
+
+    .candle {
+      display: inline-block;
+      animation: flicker 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      30% { opacity: 0.8; }
+      50% { opacity: 1; }
+      70% { opacity: 0.6; }
+      90% { opacity: 0.9; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="pentacle">&#9734;</div>
+      <h1>ATELIER</h1>
+    </header>
+
+    <div class="divider">--- * --- * ---</div>
+
+    <p class="intro">A quiet workshop of digital craft and arcane curiosities. Browse the shelves at your leisure.</p>
+
+    <div class="shelf">
+      <a href="#" class="bottle">
+        <span class="bottle-icon">&#9883;</span>
+        <span class="bottle-name">Elixirs</span>
+      </a>
+      <a href="#" class="bottle">
+        <span class="bottle-icon">&#9998;</span>
+        <span class="bottle-name">Scrolls</span>
+      </a>
+      <a href="#" class="bottle">
+        <span class="bottle-icon">&#9830;</span>
+        <span class="bottle-name">Gems</span>
+      </a>
+      <a href="#" class="bottle">
+        <span class="bottle-icon">&#9752;</span>
+        <span class="bottle-name">Herbs</span>
+      </a>
+      <a href="#" class="bottle">
+        <span class="bottle-icon">&#9788;</span>
+        <span class="bottle-name">Rituals</span>
+      </a>
+      <a href="#" class="bottle">
+        <span class="bottle-icon">&#10052;</span>
+        <span class="bottle-name">Runes</span>
+      </a>
+    </div>
+
+    <div class="footer">
+      <span class="candle">&#x1F56F;</span> tended by candlelight <span class="candle">&#x1F56F;</span>
+    </div>
+  </div>
+</body>
+</html>
